@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -30,6 +31,10 @@ public class Main {
 		List<Movie> movies = parse(json);
 		System.out.println(movies.size());
 		System.out.println(movies.get(0));
+		
+		PrintWriter writer = new PrintWriter("content.html");
+		new HtmlGenerator(writer).generate(movies);
+		writer.close();
 
 		}
 		catch (FileNotFoundException | IllegalArgumentException ex) {
@@ -41,12 +46,6 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
 	}
 
 	

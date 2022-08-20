@@ -1,8 +1,3 @@
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Movie {
 	
@@ -20,6 +15,27 @@ public class Movie {
 		this.year = year;
 	}
 	
+	
+	public String getTitle() {
+		return title;
+	}
+
+
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+
+	public String getRating() {
+		return rating;
+	}
+
+
+	public String getYear() {
+		return year;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Filme: " + title + " Url imagem: " +urlImage+ " rating: "+ rating+ " ano: " + year;
