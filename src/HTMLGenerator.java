@@ -1,6 +1,6 @@
 import java.io.PrintWriter;
 import java.util.List;
-
+//Classe responsavel por gerar o HTML
 class HtmlGenerator {
 
 	private final PrintWriter writer;
@@ -30,7 +30,7 @@ class HtmlGenerator {
 			+"</div>";
 			
 			
-			writer.println(String.format(div, movie.getTitle(), movie.getUrlImage(), movie.getTitle(), movie.getRating(), movie.getYear()));
+			writer.println(String.format(div, movie.getTitle(), movie.getUrlImage(), movie.getTitle(), movie.getYear(), movie.getRating()));
 		}
 
 				
