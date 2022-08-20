@@ -11,16 +11,14 @@ import java.time.Duration;
 public class ImdbApiClient {
 	
 	private String key;
-	private String url;
 	
-	public ImdbApiClient(String key,String url) {
+	public ImdbApiClient(String key) {
 		this.key = key;
-		this.url = url;
 	}
 	
 	public String getJson(){
 		try {
-		HttpRequest request = HttpRequest.newBuilder().uri(new URI(url + key)).GET().timeout(Duration.ofSeconds(10)).build();
+		HttpRequest request = HttpRequest.newBuilder().uri(new URI("https://imdb-api.com/en/API/Top250Movies/" + key)).GET().timeout(Duration.ofSeconds(10)).build();
 		HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();		 
 		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());		 
 		return response.body();

@@ -11,7 +11,7 @@ public class Main {
 		try {
 		Scanner sc = new Scanner(new File("keyimdb.txt"), "UTF-8");
 		String key = sc.nextLine();	
-		String json = (new ImdbApiClient(key, "https://imdb-api.com/en/API/Top250Movies/").getJson());
+		String json = (new ImdbApiClient(key).getJson());
 		
 		List<Movie> movies =(new ImdbMovieJsonParser(json).parse());
 		System.out.println(movies.size());
